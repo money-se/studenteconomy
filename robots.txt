@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://money-se.github.io/studenteconomy/sitemap.xml
