@@ -1,41 +1,99 @@
 <!DOCTYPE html>
-<html lang="sv"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Budgetmall för studenter – enkelt upplägg</title>
-<meta name="description" content="En enkel budgetmall för studenter. Räkna, justera och håll det realistiskt.">
-<style>
-:root{--bg:#f6f7f9;--panel:#fff;--border:#e6e8eb;--text:#1f2933;--muted:#6b7280;--accent:#2563eb}
-*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg)}
-.shell{max-width:900px;margin:48px auto;padding:28px;background:var(--panel);border:1px solid var(--border);border-radius:18px}
-h1{margin:0 0 8px 0} h2{margin:24px 0 8px 0}
-.small{color:var(--muted)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-input{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px}
-.out{font-weight:800}
-@media(max-width:720px){.shell{margin:16px;padding:16px}.grid{grid-template-columns:1fr}}
-</style></head>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budgetmall för studenter – enkelt upplägg</title>
+  <meta name="description" content="Budgetmall för studenter: enkelt upplägg + snabb räknare. Bygg en budget du faktiskt klarar att följa." />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root{--bg:#f6f7f9;--panel:#fff;--border:#e6e8eb;--text:#1f2933;--muted:#6b7280;--accent:#2563eb;--shadow:0 10px 30px rgba(0,0,0,.06)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+    .shell{max-width:900px;margin:48px auto;padding:28px 26px;background:var(--panel);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow)}
+    h1{margin:0 0 10px 0;font-size:2rem;line-height:1.25}
+    h2{margin:26px 0 10px 0;font-size:1.25rem}
+    p{margin:10px 0}
+    ul{padding-left:18px;margin:10px 0}
+    li{margin:6px 0}
+    .small{color:var(--muted);font-size:.95rem}
+    .card{border:1px solid var(--border);border-radius:14px;padding:14px 16px;margin:14px 0;background:#fff}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    label{font-weight:800;font-size:.95rem}
+    input{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px}
+    .out{font-weight:900}
+    a{color:var(--accent);text-decoration:none;font-weight:650}
+    a:hover{text-decoration:underline}
+    footer{margin-top:34px;color:var(--muted);font-size:.9rem}
+    @media(max-width:720px){.shell{margin:16px;padding:18px 16px}.grid{grid-template-columns:1fr}h1{font-size:1.6rem}}
+  </style>
+</head>
 <body>
-<main class="shell">
-<h1>Budgetmall för studenter</h1>
-<p class="small">Kopiera upplägget eller använd räknaren.</p>
+  <main class="shell">
+    <header>
+      <h1>Budgetmall för studenter</h1>
+      <p class="small">Detta är ett enkelt upplägg som är gjort för att hålla i verkligheten. En budget du inte följer är bara text.</p>
+    </header>
 
-<div class="grid">
-<input id="i" placeholder="Inkomst">
-<input id="r" placeholder="Hyra">
-<input id="m" placeholder="Mat">
-<input id="t" placeholder="Transport">
-<input id="o" placeholder="Övrigt">
-</div>
-<p class="out" id="o2">—</p>
-<script>
-[i,r,m,t,o].forEach(x=>x.addEventListener("input",()=>{const L=(+i.value||0)-((+r.value||0)+(+m.value||0)+(+t.value||0)+(+o.value||0));o2.textContent=L>=0?`Kvar: ${L} kr`:`Underskott: ${Math.abs(L)} kr`;}));
-</script>
+    <section>
+      <h2>Kort svar</h2>
+      <p>En bra studentbudget har få kategorier och prioriterar det viktigaste: <strong>hyra, mat, transport, övrigt</strong> – och gärna en liten buffert.</p>
+    </section>
 
-<h2>Tips</h2>
-<ul>
-<li>Justera först mat och övrigt.</li>
-<li>Sätt buffert direkt när pengar kommer.</li>
-</ul>
+    <section class="card">
+      <h2>Budget-räknare</h2>
+      <div class="grid">
+        <div><label>Inkomst (kr/mån)</label><input id="i" type="number" placeholder="ex. 12000"></div>
+        <div><label>Hyra (kr)</label><input id="r" type="number" placeholder="ex. 5200"></div>
+        <div><label>Mat (kr)</label><input id="m" type="number" placeholder="ex. 2600"></div>
+        <div><label>Transport (kr)</label><input id="t" type="number" placeholder="ex. 600"></div>
+        <div><label>Övrigt (kr)</label><input id="o" type="number" placeholder="ex. 1800"></div>
+        <div><label>Buffert (kr)</label><input id="b" type="number" placeholder="ex. 300"></div>
+      </div>
+      <p class="out" id="o2">Fyll i siffror för att se kvar.</p>
 
-<p class="small"><a href="../budget-student/">Budget – enkel modell</a></p>
-</main></body></html>
+      <script>
+        const fields = ["i","r","m","t","o","b"].map(id => document.getElementById(id));
+        fields.forEach(x => x.addEventListener("input", calc));
+        function calc(){
+          const I=+i.value||0, R=+r.value||0, M=+m.value||0, T=+t.value||0, O=+o.value||0, B=+b.value||0;
+          const left = I - (R+M+T+O+B);
+          o2.textContent = left>=0 ? `Kvar: ${left} kr` : `Underskott: ${Math.abs(left)} kr`;
+        }
+      </script>
+      <p class="small">Tips: Om du har oregelbunden inkomst, räkna på din “sämsta rimliga” månad.</p>
+    </section>
+
+    <section>
+      <h2>Så använder du mallen</h2>
+      <ul>
+        <li>Sätt <strong>hyra</strong> och <strong>mat</strong> först.</li>
+        <li>Lägg en liten <strong>buffert</strong> (även 100–300 kr gör skillnad).</li>
+        <li>“Övrigt” får vara flexibelt, men håll koll på småköp.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Vanliga misstag</h2>
+      <ul>
+        <li>För många kategorier → du slutar följa budgeten.</li>
+        <li>Du glömmer “sällan-utgifter” (presenter, tandläkare, resor).</li>
+        <li>Du gör budgeten för hård → du “straffar” dig själv och ger upp.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Relaterat</h2>
+      <p>
+        <a href="../budget-student/">Budget som student: enkel modell</a> ·
+        <a href="../utgifter-student-checklista/">Utgifter du glömmer</a> ·
+        <a href="../buffert-student/">Buffert som student</a>
+      </p>
+    </section>
+
+    <footer>
+      <p><a href="../">Tillbaka</a></p>
+    </footer>
+  </main>
+</body>
+</html>
