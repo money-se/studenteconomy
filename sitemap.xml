@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/</loc>
-  </url>
+  <!-- Root -->
+  <url><loc>https://money-se.github.io/studenteconomy/</loc></url>
 
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student/</loc>
-  </url>
+  <!-- Batch #1: Kreditkort -->
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-risk/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-utan-inkomst/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-csn/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-extrajobb/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-ranta/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-arsavgift/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-betalningsanmarkning/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/kreditkort-student-kreditgrans/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/basta-kreditkort-student/</loc></url>
 
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-risk/</loc>
-  </url>
+  <!-- Batch #2: Sparande / Buffert -->
+  <url><loc>https://money-se.github.io/studenteconomy/buffert-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/spara-med-csn/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/buffert-utan-inkomst/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/hur-mycket-spara-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/sparkonto-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/buffert-vs-skuldfri/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/spara-smatt-summor/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/automatisk-sparande-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/buffert-forst/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/basta-satt-spara-student/</loc></url>
 
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-utan-inkomst/</loc>
-  </url>
+  <!-- Batch #3: Budget / Utgifter -->
+  <url><loc>https://money-se.github.io/studenteconomy/budget-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/budgetmall-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/matbudget-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/hyra-andel-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/spara-pa-maten-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/abonnemang-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/utgifter-student-checklista/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/budget-50-30-20-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/budgetapp-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/basta-sattet-spara-varje-manad/</loc></url>
 
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-csn/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-extrajobb/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-ranta/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-arsavgift/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-betalningsanmarkning/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-kreditgrans/</loc>
-  </url>
-
-  <url>
-    <loc>https://money-se.github.io/studenteconomy/basta-kreditkort-student/</loc>
-  </url>
+  <!-- Batch #4: Inkomst / Extrajobb -->
+  <url><loc>https://money-se.github.io/studenteconomy/extrajobb-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/hur-mycket-jobba-med-csn/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/csn-fribelopp-enkelt/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/sommarjobb-student-ekonomi/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/timlon-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/deltidsjobb-studier/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/extrajobb-hemifran-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/inkomst-oregelbunden-budget/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/skatt-pa-extrajobb-student/</loc></url>
+  <url><loc>https://money-se.github.io/studenteconomy/basta-extrajobb-student/</loc></url>
 
 </urlset>
