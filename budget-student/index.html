@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Budget som student – enkel modell som funkar</title>
+<meta name="description" content="En enkel budgetmodell för studenter. Se hur mycket som går till hyra, mat och sparande – och räkna direkt.">
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--border:#e6e8eb;--text:#1f2933;--muted:#6b7280;--accent:#2563eb}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.shell{max-width:900px;margin:48px auto;padding:28px;background:var(--panel);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+h1{margin:0 0 8px 0;font-size:2rem} h2{margin:26px 0 8px 0;font-size:1.25rem}
+p{margin:10px 0} ul{padding-left:18px} li{margin:6px 0}
+.small{color:var(--muted);font-size:.95rem}
+.card{border:1px solid var(--border);border-radius:14px;padding:14px;margin:14px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{font-weight:700} input{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px}
+.out{font-weight:800}
+a{color:var(--accent);text-decoration:none;font-weight:700}
+@media(max-width:720px){.shell{margin:16px;padding:16px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="shell">
+<header>
+<h1>Budget som student: enkel modell</h1>
+<p class="small">Målet är kontroll, inte perfektion. Den här modellen funkar även på CSN.</p>
+</header>
+
+<section>
+<h2>Kort svar</h2>
+<p>En fungerande studentbudget prioriterar <strong>hyra → mat → buffert</strong> och lämnar resten flexibelt. Hellre enkel budget du följer än perfekt budget du överger.</p>
+</section>
+
+<section class="card">
+<h2>Budget-räknare (snabb)</h2>
+<div class="grid">
+<div><label>Månadsinkomst (kr)</label><input id="income" type="number" placeholder="ex. 12000"></div>
+<div><label>Hyra (kr)</label><input id="rent" type="number" placeholder="ex. 5000"></div>
+<div><label>Mat (kr)</label><input id="food" type="number" placeholder="ex. 2500"></div>
+<div><label>Övrigt (kr)</label><input id="other" type="number" placeholder="ex. 2000"></div>
+</div>
+<p class="out" id="result">Fyll i siffror för att se kvar.</p>
+<script>
+const ids=["income","rent","food","other"];
+ids.forEach(i=>document.getElementById(i).addEventListener("input",calc));
+function calc(){
+ const inc=+income.value||0, r=+rent.value||0, f=+food.value||0, o=+other.value||0;
+ const left=inc-(r+f+o);
+ result.textContent = left>=0 ? `Kvar: ${left} kr` : `Underskott: ${Math.abs(left)} kr`;
+}
+</script>
+</section>
+
+<section>
+<h2>Enkel prioritering</h2>
+<ul>
+<li>Hyra under kontroll (helst &lt;50–60%).</li>
+<li>Matbudget som håller hela månaden.</li>
+<li>Buffert först, sen “kul”.</li>
+</ul>
+</section>
+
+<section>
+<h2>Relaterat</h2>
+<p><a href="../buffert-student/">Hur stor buffert bör man ha?</a> · <a href="../matbudget-student/">Matbudget som student</a></p>
+</section>
+
+<footer><p class="small"><a href="../">Tillbaka</a></p></footer>
+</main>
+</body>
+</html>
