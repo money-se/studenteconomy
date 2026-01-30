@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Budgetmall för studenter – enkelt upplägg</title>
+<meta name="description" content="En enkel budgetmall för studenter. Räkna, justera och håll det realistiskt.">
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--border:#e6e8eb;--text:#1f2933;--muted:#6b7280;--accent:#2563eb}
+*{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg)}
+.shell{max-width:900px;margin:48px auto;padding:28px;background:var(--panel);border:1px solid var(--border);border-radius:18px}
+h1{margin:0 0 8px 0} h2{margin:24px 0 8px 0}
+.small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input{width:100%;padding:10px;border:1px solid var(--border);border-radius:10px}
+.out{font-weight:800}
+@media(max-width:720px){.shell{margin:16px;padding:16px}.grid{grid-template-columns:1fr}}
+</style></head>
+<body>
+<main class="shell">
+<h1>Budgetmall för studenter</h1>
+<p class="small">Kopiera upplägget eller använd räknaren.</p>
+
+<div class="grid">
+<input id="i" placeholder="Inkomst">
+<input id="r" placeholder="Hyra">
+<input id="m" placeholder="Mat">
+<input id="t" placeholder="Transport">
+<input id="o" placeholder="Övrigt">
+</div>
+<p class="out" id="o2">—</p>
+<script>
+[i,r,m,t,o].forEach(x=>x.addEventListener("input",()=>{const L=(+i.value||0)-((+r.value||0)+(+m.value||0)+(+t.value||0)+(+o.value||0));o2.textContent=L>=0?`Kvar: ${L} kr`:`Underskott: ${Math.abs(L)} kr`;}));
+</script>
+
+<h2>Tips</h2>
+<ul>
+<li>Justera först mat och övrigt.</li>
+<li>Sätt buffert direkt när pengar kommer.</li>
+</ul>
+
+<p class="small"><a href="../budget-student/">Budget – enkel modell</a></p>
+</main></body></html>
