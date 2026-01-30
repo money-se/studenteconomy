@@ -1,9 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://money-se.github.io/studenteconomy/</loc>
-    <lastmod>2026-01-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-risk/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-utan-inkomst/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-csn/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-extrajobb/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-ranta/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-arsavgift/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-betalningsanmarkning/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/kreditkort-student-kreditgrans/</loc>
+  </url>
+
+  <url>
+    <loc>https://money-se.github.io/studenteconomy/basta-kreditkort-student/</loc>
+  </url>
+
 </urlset>
